@@ -1,0 +1,29 @@
+{
+    "transparency16": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "level1": {
+        "id": "level1",
+        "mimeType": "application/mkcd-tilemap",
+        "data": "MTAxMDAwMTAwMDA3MDgwODA3MDEwMTA3MDcwNzAxMDEwMzAyMDIwNDAxMDgwODAxMDcwNzA4MDcwMTAxMDcwNzAzMDIwMjA0MDcwMTAxMDEwMTA3MDcwMTAxMDcwMTA1MDIwMjAyMDYwMTAxMDcwNzAxMDcwNzAxMDcwMTA1MDIwMjAyMDYwMTAxMDEwNzAxMDEwODAxMDEwNzA1MDIwMjAyMDYwMTA3MDcwMTA3MDEwNzA4MDcwNzAxMDMwMjAyMDQwMTA3MDcwNzAxMDEwODA3MDcwODAxMDUwMjAyMDIwNjAxMDEwODAxMDcwNzAxMDcwNzAxMDEwMzAyMDIwNDA3MDcwMTA4MDEwNzAxMDgwMTAxMDcwMTAzMDIwMjA0MDcwNzAxMDcwMTAxMDEwMTAxMDEwNzAxMDMwMjAyMDQwMTA4MDcwNzAxMDEwNzA3MDcwMTA3MDUwMjAyMDIwNjAxMDEwMTAxMDEwODA3MDEwNzA4MDEwMzAyMDIwNDAxMDgwNzA3MDcwMTAxMDEwNzA3MDEwNTAyMDIwMjA2MDEwNzAxMDcwNzAxMDEwMTAxMDgwNTAyMDIwMjA2MDEwMTA3MDcwMTA3MDEwNzA3MDEwMTAzMDIwMjA0MDcwNzAxMDgwMTA3MDcwMTAxMDcwMTAxMDMwMjAyMDQwMTA3MDEwNzAxMDgwMTAxMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMA==",
+        "tileset": [
+            "myTiles.transparency16",
+            "sprites.castle.tileGrass2",
+            "sprites.castle.tilePath5",
+            "sprites.castle.tilePath4",
+            "sprites.castle.tilePath6",
+            "sprites.castle.tilePath1",
+            "sprites.castle.tilePath9",
+            "sprites.castle.tileGrass1",
+            "sprites.castle.tileGrass3"
+        ],
+        "displayName": "test1"
+    },
+    "*": {
+        "mimeType": "image/x-mkcd-f4",
+        "dataEncoding": "base64",
+        "namespace": "myTiles"
+    }
+}
