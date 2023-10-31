@@ -1,8 +1,17 @@
+# St. Plagueys Game
+
+# Info
 #game.splash("St. Plagueys")
 #name = game.ask_for_string("Enter name:")
-name = "diya"
+name = "Diya"
+
+
+# Setup
+
+# Create Tilemap
 tiles.set_current_tilemap(tilemap("""test1"""))
 
+# Create Sprites
 player_character = sprites.create(img("""
     . . . . . f f 4 4 f f . . . . .
     . . . . f 5 4 5 5 4 5 f . . . .
@@ -45,23 +54,32 @@ duck1 = sprites.create(assets.image("""duck6"""), SpriteKind.enemy)
 duck2 = sprites.create(assets.image("""duck6"""), SpriteKind.enemy)
 duck3 = sprites.create(assets.image("""duck6"""), SpriteKind.enemy)
 
+# Place Sprites
 tiles.place_on_tile(burger, tiles.get_tile_location(0, 10))
 tiles.place_on_tile(duck, tiles.get_tile_location(0, 15))
 tiles.place_on_tile(duck1, tiles.get_tile_location(0, 14))
 tiles.place_on_tile(duck2, tiles.get_tile_location(0, 13))
 tiles.place_on_tile(duck3, tiles.get_tile_location(0, 0))
+
+# Set Camera
 scene.camera_follow_sprite(player_character)
 
+
+# Functions
+
+# Player and Food Overlap
 def on_overlap_player_food(sprite, otherSprite):
     sprite.start_effect(effects.spray)
     otherSprite.start_effect(effects.fire)
 sprites.on_overlap(SpriteKind.player, SpriteKind.food, on_overlap_player_food)
 
-def on_overlap_play_enemy(sprite, otherSprite):
+# Player and Enemy Overlap
+def on_overlap_player_enemy(sprite, otherSprite):
     load_level1(player_character)
-sprites.on_overlap(SpriteKind.player, SpriteKind.enemy, on_overlap_play_enemy)
+sprites.on_overlap(SpriteKind.player, SpriteKind.enemy, on_overlap_player_enemy)
 controller.move_sprite(player_character)
 
+# Change Tilemap and Destroy Sprites
 def load_level1(player):
     tiles.set_current_tilemap(tilemap("""level0"""))
     sprites.destroy(burger)
@@ -70,6 +88,9 @@ def load_level1(player):
     return
 
 
+# Game Start
+
+# Intro
 game.set_dialog_cursor(img("""
     . . . . . . . 6 . . . . . . . .
     . . . . . . 8 6 6 . . . 6 8 . .
