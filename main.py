@@ -1,4 +1,6 @@
-
+#game.splash("St. Plagueys")
+#name = game.ask_for_string("Enter name:")
+name = "diya"
 tiles.set_current_tilemap(tilemap("""test1"""))
 
 player_character = sprites.create(img("""
@@ -19,7 +21,7 @@ player_character = sprites.create(img("""
     . . . f f 1 d 1 d 1 d f f . . .
     . . . . . f f b b f f . . . . .
 """), SpriteKind.player)
-
+player_character.say_text(name)
 burger = sprites.create(img("""
     . . . . c c c b b b b b . . . .
     . . c c b 4 4 4 4 4 4 b b b . .
@@ -38,16 +40,53 @@ burger = sprites.create(img("""
     . e e b b 4 4 4 4 4 4 4 4 e e .
     . . . c c c c c e e e e e . . .
 """), SpriteKind.food)
+duck = sprites.create(assets.image("""duck6"""), SpriteKind.enemy)
+duck1 = sprites.create(assets.image("""duck6"""), SpriteKind.enemy)
+duck2 = sprites.create(assets.image("""duck6"""), SpriteKind.enemy)
+duck3 = sprites.create(assets.image("""duck6"""), SpriteKind.enemy)
 
 tiles.place_on_tile(burger, tiles.get_tile_location(0, 10))
+tiles.place_on_tile(duck, tiles.get_tile_location(0, 15))
+tiles.place_on_tile(duck1, tiles.get_tile_location(0, 14))
+tiles.place_on_tile(duck2, tiles.get_tile_location(0, 13))
+tiles.place_on_tile(duck3, tiles.get_tile_location(0, 0))
 scene.camera_follow_sprite(player_character)
 
 def on_overlap_player_food(sprite, otherSprite):
     sprite.start_effect(effects.spray)
     otherSprite.start_effect(effects.fire)
-
 sprites.on_overlap(SpriteKind.player, SpriteKind.food, on_overlap_player_food)
 
-
-
+def on_overlap_play_enemy(sprite, otherSprite):
+    load_level1(player_character)
+sprites.on_overlap(SpriteKind.player, SpriteKind.enemy, on_overlap_play_enemy)
 controller.move_sprite(player_character)
+
+def load_level1(player):
+    tiles.set_current_tilemap(tilemap("""level0"""))
+    sprites.destroy(burger)
+    sprites.destroy_all_sprites_of_kind(SpriteKind.enemy)
+    tiles.place_on_tile(player, tiles.get_tile_location(0, 0))
+    return
+
+
+game.set_dialog_cursor(img("""
+    . . . . . . . 6 . . . . . . . .
+    . . . . . . 8 6 6 . . . 6 8 . .
+    . . . e e e 8 8 6 6 . 6 7 8 . .
+    . . e 2 2 2 2 e 8 6 6 7 6 . . .
+    . e 2 2 4 4 2 7 7 7 7 7 8 6 . .
+    . e 2 4 4 2 6 7 7 7 6 7 6 8 8 .
+    e 2 4 5 2 2 6 7 7 6 2 7 7 6 . .
+    e 2 4 4 2 2 6 7 6 2 2 6 7 7 6 .
+    e 2 4 2 2 2 6 6 2 2 2 e 7 7 6 .
+    e 2 4 2 2 4 2 2 2 4 2 2 e 7 6 .
+    e 2 4 2 2 2 2 2 2 2 2 2 e c 6 .
+    e 2 2 2 2 2 2 2 4 e 2 e e c . .
+    e e 2 e 2 2 4 2 2 e e e c . . .
+    e e e e 2 e 2 2 e e e c . . . .
+    e e e 2 e e c e c c c . . . . .
+    . c c c c c c c . . . . . . . .
+"""))
+text = name + " is at school today and it is a normal day for " + name + "until a bad chemistry teacher did something silly..."
+game.show_long_text(text, DialogLayout.BOTTOM)
