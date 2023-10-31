@@ -1,3 +1,4 @@
+
 tiles.set_current_tilemap(tilemap("""test1"""))
 
 player_character = sprites.create(img("""
@@ -46,6 +47,7 @@ def on_overlap_player_food(sprite, otherSprite):
     otherSprite.start_effect(effects.fire)
 
 sprites.on_overlap(SpriteKind.player, SpriteKind.food, on_overlap_player_food)
+
 
 
 controller.move_sprite(player_character)
