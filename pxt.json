@@ -2,15 +2,17 @@
     "name": "St Plagueys",
     "description": "",
     "dependencies": {
-        "device": "*"
+        "device": "*",
+        "Inventory": "github:unsignedarduino/inventory#v1.1.1"
     },
     "files": [
-        "main.ts",
         "README.md",
         "assets.json",
-        "main.py",
         "tilemap.g.jres",
-        "tilemap.g.ts"
+        "tilemap.g.ts",
+        "main.py",
+        "images.g.jres",
+        "images.g.ts"
     ],
     "testFiles": [
         "test.ts"
